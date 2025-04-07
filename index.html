@@ -19,7 +19,85 @@
     <h2>Dennis Marcellino</h2>
     <p>I'm just an ordinary person who wants to be known by many people to get more friends.</p>
   </section>
-
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Me</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom, #000000, #444444);
+        color: #f0f0f0;
+        overflow-x: hidden;
+      }
+  
+      .container {
+        max-width: 700px;
+        margin: 80px auto;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        
+        /* Animasi */
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+  
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+  
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: center;
+        color: #dddddd;
+      }
+  
+      .contact {
+        text-align: center;
+        margin-top: 30px;
+      }
+  
+      .contact a {
+        color: #1abc9c;
+        text-decoration: none;
+        font-weight: bold;
+      }
+  
+      .contact a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>About Me</h1>
+      <p>Hello! I'm Dennis Marcellino, a creative and motivated individual who enjoys building things on the web. I love working on new ideas, learning technologies, and improving myself every day.</p>
+      <p>My interests include design, and exploring how digital tools can solve real-world problems. I’m always open to collaborations and exciting new projects.</p>
+      
+      <div class="contact">
+        <p>Let's connect: <a href="mailto:youremail@example.com">dmarcelzsx@gmail.com</a></p>
+      </div>
+    </div>
+  </body>
+  </html>
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">

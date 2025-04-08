@@ -4,100 +4,286 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #000000, #444444);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    /* Footer Section (now on top) */
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .social-links a {
+      color: #1abc9c;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      color: white;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    /* Profile */
+    .profile {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+
+    .profile h2 {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .profile p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    /* About Me Section */
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .container p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: center;
+      color: #dddddd;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact a {
+      color: #1abc9c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gallery */
+    .gallery {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Comments Section */
+    .comment-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #000;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .comment-section h2 {
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .comment-section form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comment-section input, .comment-section textarea {
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+    }
+
+    .comment-section input::placeholder, .comment-section textarea::placeholder {
+      color: #aaa;
+    }
+
+    .comment-section button {
+      padding: 12px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .comment-section button:hover {
+      background-color: #1abc9c;
+      color: #fff;
+    }
+
+    .comments-list {
+      margin-top: 30px;
+    }
+
+    .comments-list div {
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+      animation: slideInUp 0.5s ease-out forwards;
+    }
+
+    .comments-list .comment-name {
+      font-weight: bold;
+    }
+
+    .comments-list .comment-time {
+      font-size: 12px;
+      color: #999;
+    }
+
+    @keyframes slideInUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="animated-bg"></div>
+  <!-- Footer Section (Now on top) -->
+  <footer>
+    <div class="social-links">
+      <a href="https://open.spotify.com/user/31bogyajlsri235wkzrvdmuoqmom?si=3g5GmRObTVWyfqfffBdvrw" target="_blank">Spotify</a>
+      <a href="https://www.instagram.com/denbdy/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@denbdy?_t=ZS-8vKrNwxcR0R&_r=1" target="_blank">Tiktok</a>
+      <a href="https://steamcommunity.com/profiles/76561199746423591/" target="_blank">Steam</a>
+    </div>
+  </footer>
 
+  <!-- Header Section -->
   <header>
     <h1>Welcome to My Website</h1>
     <p>Explore my projects, creativity, and passion.</p>
   </header>
 
+  <!-- Profile Section -->
   <section class="profile">
     <img src="https://i.pinimg.com/originals/77/c5/01/77c5016752c557b2bf8ee52e006be75f.gif" class="profile-photo" />
     <h2>Dennis Marcellino</h2>
     <p>I'm just an ordinary person who wants to be known by many people to get more friends.</p>
   </section>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Me</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to bottom, #000000, #444444);
-        color: #f0f0f0;
-        overflow-x: hidden;
-      }
-  
-      .container {
-        max-width: 700px;
-        margin: 80px auto;
-        padding: 40px;
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 15px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        
-        /* Animasi */
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s ease-out forwards;
-      }
-  
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-  
-      h1 {
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #ffffff;
-      }
-  
-      p {
-        font-size: 18px;
-        line-height: 1.8;
-        text-align: center;
-        color: #dddddd;
-      }
-  
-      .contact {
-        text-align: center;
-        margin-top: 30px;
-      }
-  
-      .contact a {
-        color: #1abc9c;
-        text-decoration: none;
-        font-weight: bold;
-      }
-  
-      .contact a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>About Me</h1>
-      <p>Hello! I'm Dennis Marcellino, a creative and motivated individual who enjoys building things on the web. I love working on new ideas, learning technologies, and improving myself every day.</p>
-      <p>My interests include design, and exploring how digital tools can solve real-world problems. I’m always open to collaborations and exciting new projects.</p>
-      
-      <div class="contact">
-        <p>Let's connect: <a href="mailto:youremail@example.com">dmarcelzsx@gmail.com</a></p>
-      </div>
+
+  <!-- About Me Section -->
+  <div class="container">
+    <h1>About Me</h1>
+    <p>Hello! I'm Dennis Marcellino, a creative and motivated individual who enjoys building things on the web. I love working on new ideas, learning technologies, and improving myself every day.</p>
+    <p>My interests include design, and exploring how digital tools can solve real-world problems. I’m always open to collaborations and exciting new projects.</p>
+
+    <div class="contact">
+      <p>Let's connect: <a href="mailto:dmarcelzsx@gmail.com">dmarcelzsx@gmail.com</a></p>
     </div>
-  </body>
-  </html>
+  </div>
+
+  <!-- Gallery Section -->
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
@@ -108,15 +294,44 @@
     </div>
   </section>
 
-  <footer>
-    <div class="social-links">
-      <a href="https://open.spotify.com/user/31bogyajlsri235wkzrvdmuoqmom?si=3g5GmRObTVWyfqfffBdvrw" target="_blank">Spotify</a>
-      <a href="https://www.instagram.com/denbdy/" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@denbdy?_t=ZS-8vKrNwxcR0R&_r=1" target="_blank">Tiktok</a>
-      <a href="https://steamcommunity.com/profiles/76561199746423591/" target="_blank">Steam</a>
-    </div>
-  </footer>
+  <!-- Comments Section -->
+  <section class="comment-section">
+    <h2>Leave a Comment</h2>
+    <form id="commentForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <textarea id="comment" placeholder="Comment" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
 
-  <script src="script.js"></script>
+    <div class="comments-list" id="commentsList"></div>
+  </section>
+
+  <script>
+    // Handle comment form submission
+    const form = document.getElementById('commentForm');
+    const commentsList = document.getElementById('commentsList');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        const date = new Date();
+        const timeString = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.innerHTML = `
+          <div class="comment-name">${name}</div>
+          <div class="comment-text">${comment}</div>
+          <div class="comment-time">${timeString}</div>
+        `;
+        commentsList.appendChild(newComment);
+
+        form.reset();
+      }
+    });
+  </script>
 </body>
 </html>
